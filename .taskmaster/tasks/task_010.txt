@@ -1,0 +1,11 @@
+# Task ID: 10
+# Title: Gerenciamento de Estado entre Testes
+# Status: pending
+# Dependencies: 2
+# Priority: medium
+# Description: Implementar managers para controle de estado entre testes
+# Details:
+Criar TokenManager, UsuarioManager, CategoriaManager e outros managers necessários para compartilhar dados entre steps de teste
+
+# Test Strategy:
+Validar compartilhamento correto de dados entre diferentes steps

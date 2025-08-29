@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Configuração da API Node.js Básica
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Implementar estrutura básica da API CMS com Express.js e TypeScript
+# Details:
+Configurar projeto Node.js com TypeScript, Express.js, estrutura de pastas (src/database, src/entities, src/middleware, src/routes, src/services, src/utils), configuração do TypeORM e banco de dados
+
+# Test Strategy:
+Validar inicialização do servidor e endpoints básicos

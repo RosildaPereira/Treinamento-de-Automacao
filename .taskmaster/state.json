@@ -1,0 +1,13 @@
+{
+  // Tag atual ativa no Task Master
+  "currentTag": "master",
+  
+  // Data e hora da última mudança de tag
+  "lastSwitched": "2025-08-10T13:10:57.647Z",
+  
+  // Mapeamento de branches para tags (não usado neste projeto)
+  "branchTagMapping": {},
+  
+  // Indica se o aviso de migração já foi mostrado
+  "migrationNoticeShown": false
+}

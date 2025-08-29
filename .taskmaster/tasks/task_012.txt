@@ -1,0 +1,11 @@
+# Task ID: 12
+# Title: Features Cucumber para Categorias
+# Status: pending
+# Dependencies: 7, 9
+# Priority: medium
+# Description: Criar cenários de teste BDD para funcionalidades de categorias
+# Details:
+Implementar features com cenários para cadastro, consulta, listagem, edição e exclusão de categorias
+
+# Test Strategy:
+Executar testes automatizados e validar cobertura de cenários

@@ -1,0 +1,11 @@
+# Task ID: 15
+# Title: Documentação Swagger da API
+# Status: pending
+# Dependencies: 8
+# Priority: low
+# Description: Criar documentação interativa da API com Swagger/OpenAPI
+# Details:
+Configurar Swagger para documentação automática dos endpoints, incluir exemplos de requisição/resposta, configurar interface interativa para testes
+
+# Test Strategy:
+Validar documentação gerada e interface interativa

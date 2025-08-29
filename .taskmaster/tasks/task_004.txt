@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Implementação das Entidades Básicas
+# Status: pending
+# Dependencies: 3
+# Priority: high
+# Description: Criar entidades User, Category e Article com TypeORM
+# Details:
+Implementar entidades com propriedades adequadas, relacionamentos, validações e configurações do TypeORM. Incluir migrations do banco de dados
+
+# Test Strategy:
+Validar criação das tabelas no banco e operações CRUD básicas

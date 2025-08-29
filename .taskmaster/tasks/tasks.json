@@ -1,0 +1,313 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Configuração do Ambiente de Desenvolvimento",
+        "description": "Configurar e validar o ambiente de desenvolvimento com Java 8+, Maven, Node.js e dependências necessárias",
+        "details": "Instalar e configurar Java JDK 8 ou superior, Maven para gerenciamento de dependências, Node.js e npm para a API CMS, validar configurações do ambiente e configurar variáveis de ambiente necessárias",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "testStrategy": "Validar instalação das ferramentas através de comandos de verificação de versão",
+        "complexity": 3,
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Instalar Java JDK 8+ e Verificar Instalação",
+            "description": "Baixar e instalar Java JDK 8 ou versão superior. Verificar a instalação através do comando de versão do Java.",
+            "dependencies": [],
+            "details": "Baixar o JDK apropriado do site da Oracle ou usando um gerenciador de pacotes (ex: apt, yum, brew). Após a instalação, abrir um terminal e executar `java -version`. Garantir que a saída mostre a versão correta.",
+            "status": "pending",
+            "testStrategy": "Executar `java -version` no terminal. A saída deve exibir a versão do Java instalada (8 ou superior)."
+          },
+          {
+            "id": 2,
+            "title": "Instalar Maven e Verificar Instalação",
+            "description": "Baixar e instalar Maven. Verificar a instalação através do comando de versão do Maven.",
+            "dependencies": [],
+            "details": "Baixar Maven do site Apache Maven. Extrair o arquivo para um diretório. Configurar a variável de ambiente `M2_HOME` para o diretório de instalação do Maven e adicionar o diretório `bin` à variável de ambiente `PATH`. Abrir um terminal e executar `mvn -version`. Garantir que a saída mostre a versão correta.",
+            "status": "pending",
+            "testStrategy": "Executar `mvn -version` no terminal. A saída deve exibir a versão do Maven instalada."
+          },
+          {
+            "id": 3,
+            "title": "Instalar Node.js e npm e Verificar Instalação",
+            "description": "Baixar e instalar Node.js, que inclui npm. Verificar a instalação através dos comandos de versão do Node.js e npm.",
+            "dependencies": [],
+            "details": "Baixar Node.js do site oficial Node.js ou usando um gerenciador de pacotes (ex: nvm). Após a instalação, abrir um terminal e executar `node -v` e `npm -v`. Garantir que a saída mostre as versões corretas.",
+            "status": "pending",
+            "testStrategy": "Executar `node -v` e `npm -v` no terminal. A saída deve exibir as versões do Node.js e npm instaladas."
+          },
+          {
+            "id": 4,
+            "title": "Configurar Variáveis de Ambiente",
+            "description": "Configurar variáveis de ambiente necessárias como JAVA_HOME, M2_HOME e outras variáveis específicas do projeto.",
+            "dependencies": [],
+            "details": "Configurar `JAVA_HOME` para o diretório de instalação do JDK. Configurar `M2_HOME` para o diretório de instalação do Maven. Adicionar `%JAVA_HOME%\\bin` e `%M2_HOME%\\bin` à variável de ambiente `PATH`. Criar outras variáveis de ambiente necessárias para o projeto (ex: strings de conexão com banco de dados).",
+            "status": "pending",
+            "testStrategy": "Exibir as variáveis de ambiente no terminal (ex: `echo %JAVA_HOME%`). Verificar que a saída mostre os caminhos corretos."
+          },
+          {
+            "id": 5,
+            "title": "Validar Configuração do Ambiente",
+            "description": "Criar um projeto Java simples e um projeto Node.js simples para validar a configuração do ambiente.",
+            "dependencies": [],
+            "details": "Criar um programa Java simples 'Hello, World!' usando Maven. Compilar e executar o programa. Criar uma aplicação Node.js simples 'Hello, World!' usando Express.js. Executar a aplicação e acessá-la em um navegador web.",
+            "status": "pending",
+            "testStrategy": "Executar o programa Java e a aplicação Node.js. Verificar que eles executam sem erros e que a mensagem 'Hello, World!' é exibida corretamente."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Estrutura Base do Framework Java",
+        "description": "Criar a estrutura de pacotes e classes base do framework de automação Java",
+        "details": "Implementar estrutura modular com pacotes controllers, managers, models, steps, utils e core. Configurar classes base e configurações do Maven",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "testStrategy": "Validar compilação do projeto e estrutura de pacotes",
+        "complexity": 4,
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Criar Estrutura de Diretórios Base do Projeto Java",
+            "description": "Criar a estrutura de diretórios principal do projeto Maven, incluindo src/main/java, src/main/resources, src/test/java e src/test/resources. Dentro de src/main/java, criar os pacotes controllers, managers, models, steps, utils e core.",
+            "dependencies": [],
+            "details": "Utilizar o Maven para criar a estrutura inicial do projeto. Criar os pacotes controllers, managers, models, steps, utils e core dentro do diretório src/main/java. Certificar-se de que a estrutura de diretórios esteja correta para facilitar a organização do código.",
+            "status": "pending",
+            "testStrategy": "Verificar a criação correta dos diretórios e pacotes no sistema de arquivos."
+          },
+          {
+            "id": 2,
+            "title": "Configurar o Arquivo pom.xml do Maven",
+            "description": "Configurar o arquivo pom.xml com as dependências essenciais para o framework, como JUnit, Selenium, Log4j2 e Jackson. Definir a versão do Java para 8 ou superior e configurar os plugins necessários para compilação e execução de testes.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Adicionar as dependências JUnit, Selenium, Log4j2 e Jackson ao arquivo pom.xml. Definir a versão do Java no plugin compiler do Maven. Configurar o plugin surefire para execução dos testes.",
+            "status": "pending",
+            "testStrategy": "Verificar se as dependências foram adicionadas corretamente e se o projeto compila sem erros."
+          },
+          {
+            "id": 3,
+            "title": "Criar Classes Base para Testes",
+            "description": "Criar classes base abstratas para os testes, como uma classe BaseTest que inicializa o WebDriver e configura o Log4j2. Implementar métodos para setup e teardown dos testes.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "Criar a classe BaseTest no pacote core. Inicializar o WebDriver (ChromeDriver, FirefoxDriver, etc.) no método setup. Configurar o Log4j2 para geração de logs. Implementar o método teardown para fechar o WebDriver após a execução dos testes.",
+            "status": "pending",
+            "testStrategy": "Criar uma classe de teste simples que herda de BaseTest e verificar se o WebDriver é inicializado e finalizado corretamente, e se os logs estão sendo gerados."
+          },
+          {
+            "id": 4,
+            "title": "Implementar classes de configuração",
+            "description": "Criar classes para gerenciar as configurações do framework, como leitura de arquivos de propriedades e variáveis de ambiente. Implementar métodos para acessar as configurações de forma centralizada.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "Criar uma classe ConfigurationManager no pacote utils. Implementar métodos para ler arquivos de propriedades (ex: config.properties) e variáveis de ambiente. Utilizar a biblioteca Properties do Java para manipular os arquivos de propriedades.",
+            "status": "pending",
+            "testStrategy": "Criar um arquivo de propriedades de teste e verificar se a classe ConfigurationManager consegue ler as propriedades corretamente."
+          },
+          {
+            "id": 5,
+            "title": "Configurar Log4j2",
+            "description": "Configurar o Log4j2 para gerar logs formatados e estruturados. Criar um arquivo de configuração log4j2.xml e definir os appenders e layouts necessários. Integrar o Log4j2 com as classes base do framework.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "Criar o arquivo log4j2.xml no diretório src/main/resources. Definir appenders para console e arquivo. Configurar o layout para gerar logs formatados. Integrar o Log4j2 com a classe BaseTest para que os logs sejam gerados automaticamente durante a execução dos testes.",
+            "status": "pending",
+            "testStrategy": "Executar um teste simples e verificar se os logs estão sendo gerados no console e no arquivo, com o formato configurado."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Configuração da API Node.js Básica",
+        "description": "Implementar estrutura básica da API CMS com Express.js e TypeScript",
+        "details": "Configurar projeto Node.js com TypeScript, Express.js, estrutura de pastas (src/database, src/entities, src/middleware, src/routes, src/services, src/utils), configuração do TypeORM e banco de dados",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "testStrategy": "Validar inicialização do servidor e endpoints básicos",
+        "complexity": 5
+      },
+      {
+        "id": 4,
+        "title": "Implementação das Entidades Básicas",
+        "description": "Criar entidades User, Category e Article com TypeORM",
+        "details": "Implementar entidades com propriedades adequadas, relacionamentos, validações e configurações do TypeORM. Incluir migrations do banco de dados",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "3"
+        ],
+        "testStrategy": "Validar criação das tabelas no banco e operações CRUD básicas",
+        "complexity": 4
+      },
+      {
+        "id": 5,
+        "title": "Sistema de Autenticação JWT",
+        "description": "Implementar sistema de autenticação baseado em JWT",
+        "details": "Criar middleware de autenticação, endpoints de login/registro, geração e validação de tokens JWT, proteção de rotas",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "4"
+        ],
+        "testStrategy": "Validar fluxo completo de autenticação e proteção de endpoints",
+        "complexity": 6
+      },
+      {
+        "id": 6,
+        "title": "Endpoints CRUD para Usuários",
+        "description": "Implementar endpoints completos de CRUD para gestão de usuários",
+        "details": "Criar rotas para cadastro, consulta, listagem, edição e exclusão de usuários. Implementar validações de email duplicado e regras de negócio",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "5"
+        ],
+        "testStrategy": "Validar todas as operações CRUD através de testes manuais",
+        "complexity": 5
+      },
+      {
+        "id": 7,
+        "title": "Endpoints CRUD para Categorias",
+        "description": "Implementar endpoints completos de CRUD para gestão de categorias",
+        "details": "Criar rotas para cadastro, consulta, listagem, edição e exclusão de categorias. Implementar validações e relacionamentos",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "5"
+        ],
+        "testStrategy": "Validar todas as operações CRUD através de testes manuais",
+        "complexity": 4
+      },
+      {
+        "id": 8,
+        "title": "Endpoints CRUD para Artigos",
+        "description": "Implementar endpoints completos de CRUD para gestão de artigos",
+        "details": "Criar rotas para cadastro, consulta, listagem, edição e exclusão de artigos. Implementar relacionamentos com categorias e usuários",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "6",
+          "7"
+        ],
+        "testStrategy": "Validar todas as operações CRUD através de testes manuais",
+        "complexity": 5
+      },
+      {
+        "id": 9,
+        "title": "Sistema de Logs Estruturado",
+        "description": "Implementar sistema de logs customizado para o framework Java",
+        "details": "Criar LogFormatter customizado, configuração do Log4j2, padronização de mensagens de log e rastreabilidade dos testes",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Validar geração de logs estruturados durante execução de testes",
+        "complexity": 3
+      },
+      {
+        "id": 10,
+        "title": "Gerenciamento de Estado entre Testes",
+        "description": "Implementar managers para controle de estado entre testes",
+        "details": "Criar TokenManager, UsuarioManager, CategoriaManager e outros managers necessários para compartilhar dados entre steps de teste",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Validar compartilhamento correto de dados entre diferentes steps",
+        "complexity": 4
+      },
+      {
+        "id": 11,
+        "title": "Features Cucumber para Usuários",
+        "description": "Criar cenários de teste BDD para funcionalidades de usuários",
+        "details": "Implementar features com cenários para cadastro, login, consulta, listagem, edição e exclusão de usuários. Incluir validações de email duplicado",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "6",
+          "9"
+        ],
+        "testStrategy": "Executar testes automatizados e validar cobertura de cenários",
+        "complexity": 5
+      },
+      {
+        "id": 12,
+        "title": "Features Cucumber para Categorias",
+        "description": "Criar cenários de teste BDD para funcionalidades de categorias",
+        "details": "Implementar features com cenários para cadastro, consulta, listagem, edição e exclusão de categorias",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "7",
+          "9"
+        ],
+        "testStrategy": "Executar testes automatizados e validar cobertura de cenários",
+        "complexity": 4
+      },
+      {
+        "id": 13,
+        "title": "Features Cucumber para Artigos",
+        "description": "Criar cenários de teste BDD para funcionalidades de artigos",
+        "details": "Implementar features com cenários para cadastro, consulta, listagem, edição e exclusão de artigos com relacionamentos",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "8",
+          "9"
+        ],
+        "testStrategy": "Executar testes automatizados e validar cobertura de cenários",
+        "complexity": 5
+      },
+      {
+        "id": 14,
+        "title": "Sistema de Geração de Massa de Dados",
+        "description": "Implementar sistema de geração dinâmica de dados de teste",
+        "details": "Integrar Faker para geração de dados dinâmicos, criar classes para leitura de planilhas Excel, implementar sistema de massa de dados reutilizável",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "10"
+        ],
+        "testStrategy": "Validar geração de dados consistentes e reutilizáveis",
+        "complexity": 4
+      },
+      {
+        "id": 15,
+        "title": "Documentação Swagger da API",
+        "description": "Criar documentação interativa da API com Swagger/OpenAPI",
+        "details": "Configurar Swagger para documentação automática dos endpoints, incluir exemplos de requisição/resposta, configurar interface interativa para testes",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "8"
+        ],
+        "testStrategy": "Validar documentação gerada e interface interativa",
+        "complexity": 3
+      }
+    ],
+    "metadata": {
+      "created": "2024-12-19T10:00:00Z",
+      "lastModified": "2024-12-19T10:00:00Z",
+      "totalTasks": 15,
+      "pendingTasks": 15,
+      "completedTasks": 0,
+      "description": "Tasks for master context"
+    }
+  }
+}

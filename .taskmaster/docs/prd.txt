@@ -1,0 +1,165 @@
+# PRD - Projeto de Automação de Testes API REST CMS
+
+## Overview
+Este projeto implementa um framework completo de automação de testes para uma API REST de CMS (Content Management System) desenvolvida em Node.js/TypeScript. O framework utiliza Java com Cucumber, RestAssured e JUnit para validar todos os endpoints e funcionalidades da API, seguindo metodologia BDD (Behavior Driven Development).
+
+## Core Features
+
+### 1. Framework de Automação Java
+- **Estrutura modular**: Organização em pacotes por funcionalidade (controllers, managers, models, steps)
+- **BDD com Cucumber**: Cenários de teste escritos em Gherkin para melhor legibilidade
+- **REST Assured**: Biblioteca para testes de API REST com validações robustas
+- **Gerenciamento de estado**: TokenManager e outros managers para controle de dados entre testes
+- **Geração de dados**: Integração com Faker para criação de massa de dados dinâmica
+- **Sistema de logs**: LogFormatter customizado para rastreabilidade dos testes
+
+### 2. API CMS (cms-for-qas-api)
+- **Node.js + TypeScript**: API REST moderna com tipagem estática
+- **TypeORM**: ORM para gerenciamento de banco de dados
+- **JWT Authentication**: Sistema de autenticação baseado em tokens
+- **Swagger/OpenAPI**: Documentação interativa da API
+- **Middleware customizado**: Validação de requisições e autenticação
+
+### 3. Funcionalidades Testadas
+- **Gestão de Usuários**: CRUD completo com validações de email duplicado
+- **Gestão de Categorias**: Operações de categorização de conteúdo
+- **Gestão de Artigos**: Sistema de publicação de conteúdo
+- **Autenticação**: Login e gerenciamento de tokens JWT
+
+## User Experience
+
+### Personas
+- **QA Engineer**: Utiliza o framework para executar testes automatizados
+- **Developer**: Consome a API e utiliza a documentação Swagger
+- **DevOps**: Integra os testes no pipeline CI/CD
+
+### User Flows
+1. **Execução de Testes**: QA executa testes por tag ou funcionalidade
+2. **Desenvolvimento**: Developer consulta documentação e testa endpoints
+3. **Integração**: Pipeline executa testes automaticamente
+
+## Technical Architecture
+
+### Framework Java
+- **Java 8+**: Linguagem base do framework
+- **Maven**: Gerenciamento de dependências e build
+- **Cucumber**: Framework BDD para cenários de teste
+- **RestAssured**: Biblioteca para testes de API
+- **JUnit**: Framework de asserções e execução
+- **Lombok**: Redução de boilerplate code
+- **Log4j2**: Sistema de logging estruturado
+
+### API Node.js
+- **Express.js**: Framework web para criação da API
+- **TypeORM**: ORM para banco de dados
+- **JWT**: Autenticação baseada em tokens
+- **Swagger**: Documentação da API
+- **TypeScript**: Tipagem estática para maior confiabilidade
+
+### Estrutura de Dados
+- **Excel**: Planilhas para massa de dados de teste
+- **JSON**: Formato de comunicação entre API e testes
+- **CSV**: Exportação de resultados de testes
+
+## Development Roadmap
+
+### Fase 1: Foundation (MVP)
+- Configuração do ambiente de desenvolvimento
+- Estrutura base do framework Java
+- Configuração da API Node.js básica
+- Implementação dos primeiros endpoints (usuários)
+- Testes básicos de CRUD
+
+### Fase 2: Core Features
+- Implementação completa da API CMS
+- Framework de automação robusto
+- Sistema de autenticação JWT
+- Gerenciamento de estado entre testes
+- Sistema de logs estruturado
+
+### Fase 3: Advanced Features
+- Geração dinâmica de massa de dados
+- Relatórios de teste detalhados
+- Integração com CI/CD
+- Documentação completa
+- Otimizações de performance
+
+### Fase 4: Enhancement & Maintenance
+- Novos cenários de teste
+- Melhorias na cobertura
+- Refatoração e otimizações
+- Atualizações de dependências
+- Expansão para novos endpoints
+
+## Logical Dependency Chain
+
+### 1. Infrastructure First
+- Setup do ambiente Java e Node.js
+- Configuração do banco de dados
+- Estrutura base do projeto
+
+### 2. API Foundation
+- Entidades básicas (User, Category, Article)
+- Endpoints CRUD simples
+- Middleware de validação
+
+### 3. Authentication System
+- Sistema JWT
+- Middleware de autenticação
+- Endpoints protegidos
+
+### 4. Framework Foundation
+- Estrutura de pacotes
+- Classes base (controllers, managers)
+- Sistema de logs
+
+### 5. Test Implementation
+- Features Cucumber
+- Steps implementation
+- Data management
+
+### 6. Advanced Features
+- Massa de dados dinâmica
+- Relatórios
+- CI/CD integration
+
+## Risks and Mitigations
+
+### Technical Challenges
+- **Risco**: Compatibilidade entre versões Java/Node.js
+- **Mitigação**: Documentação clara de versões e Docker para isolamento
+
+- **Risco**: Manutenção de massa de dados
+- **Mitigação**: Sistema de geração dinâmica com Faker
+
+### Resource Constraints
+- **Risco**: Complexidade do framework
+- **Mitigação**: Documentação detalhada e exemplos práticos
+
+- **Risco**: Performance dos testes
+- **Mitigação**: Paralelização e otimização de queries
+
+### MVP Definition
+- **Risco**: Escopo muito amplo inicialmente
+- **Mitigação**: Foco em funcionalidades core primeiro
+
+## Appendix
+
+### Tecnologias Específicas
+- **RestAssured**: Para requisições HTTP e validações
+- **Cucumber**: Para cenários BDD
+- **TypeORM**: Para ORM no Node.js
+- **JWT**: Para autenticação
+- **Faker**: Para geração de dados
+
+### Padrões de Projeto
+- **Page Object Model**: Adaptado para APIs
+- **Builder Pattern**: Para construção de objetos
+- **Factory Pattern**: Para criação de instâncias
+- **Singleton**: Para managers de estado
+
+### Métricas de Qualidade
+- Cobertura de testes
+- Tempo de execução
+- Taxa de sucesso
+- Manutenibilidade do código

@@ -1,0 +1,11 @@
+# Task ID: 2
+# Title: Estrutura Base do Framework Java
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Criar a estrutura de pacotes e classes base do framework de automação Java
+# Details:
+Implementar estrutura modular com pacotes controllers, managers, models, steps, utils e core. Configurar classes base e configurações do Maven
+
+# Test Strategy:
+Validar compilação do projeto e estrutura de pacotes

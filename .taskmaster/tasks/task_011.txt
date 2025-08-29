@@ -1,0 +1,11 @@
+# Task ID: 11
+# Title: Features Cucumber para Usuários
+# Status: pending
+# Dependencies: 6, 9
+# Priority: high
+# Description: Criar cenários de teste BDD para funcionalidades de usuários
+# Details:
+Implementar features com cenários para cadastro, login, consulta, listagem, edição e exclusão de usuários. Incluir validações de email duplicado
+
+# Test Strategy:
+Executar testes automatizados e validar cobertura de cenários

@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Endpoints CRUD para Usuários
+# Status: pending
+# Dependencies: 5
+# Priority: high
+# Description: Implementar endpoints completos de CRUD para gestão de usuários
+# Details:
+Criar rotas para cadastro, consulta, listagem, edição e exclusão de usuários. Implementar validações de email duplicado e regras de negócio
+
+# Test Strategy:
+Validar todas as operações CRUD através de testes manuais

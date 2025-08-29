@@ -1,0 +1,11 @@
+# Task ID: 8
+# Title: Endpoints CRUD para Artigos
+# Status: pending
+# Dependencies: 6, 7
+# Priority: medium
+# Description: Implementar endpoints completos de CRUD para gestão de artigos
+# Details:
+Criar rotas para cadastro, consulta, listagem, edição e exclusão de artigos. Implementar relacionamentos com categorias e usuários
+
+# Test Strategy:
+Validar todas as operações CRUD através de testes manuais

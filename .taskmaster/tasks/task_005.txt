@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: Sistema de Autenticação JWT
+# Status: pending
+# Dependencies: 4
+# Priority: high
+# Description: Implementar sistema de autenticação baseado em JWT
+# Details:
+Criar middleware de autenticação, endpoints de login/registro, geração e validação de tokens JWT, proteção de rotas
+
+# Test Strategy:
+Validar fluxo completo de autenticação e proteção de endpoints

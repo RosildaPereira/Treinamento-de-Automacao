@@ -1,0 +1,11 @@
+# Task ID: 7
+# Title: Endpoints CRUD para Categorias
+# Status: pending
+# Dependencies: 5
+# Priority: medium
+# Description: Implementar endpoints completos de CRUD para gestão de categorias
+# Details:
+Criar rotas para cadastro, consulta, listagem, edição e exclusão de categorias. Implementar validações e relacionamentos
+
+# Test Strategy:
+Validar todas as operações CRUD através de testes manuais

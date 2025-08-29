@@ -1,0 +1,141 @@
+---
+description: Configuração obrigatória do Task Master para usar exclusivamente Google Gemini API
+globs: .cursor/mcp.json, .taskmaster/config.json, .env
+alwaysApply: true
+---
+
+# Task Master - Configuração Google Gemini Exclusiva
+
+## **Configuração Obrigatória**
+
+### **MCP Configuration (.cursor/mcp.json)**
+```json
+{
+  "mcpServers": {
+    "task-master-ai": {
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "env": {
+        "GOOGLE_API_KEY": "AIzaSyBH19AAwPdVCraZTw5ZkrYTXoYIjknkNVg"
+      }
+    }
+  }
+}
+```
+
+### **Environment Variables (.env)**
+```env
+# ✅ DO: Usar apenas Google Gemini
+GOOGLE_API_KEY=AIzaSyBH19AAwPdVCraZTw5ZkrYTXoYIjknkNVg
+
+# ❌ DON'T: Não configurar outras APIs
+# ANTHROPIC_API_KEY=
+# OPENAI_API_KEY=
+# PERPLEXITY_API_KEY=
+```
+
+## **Model Configuration**
+
+### **Configuração Obrigatória dos Models**
+- **Main Model**: `gemini-2.0-flash` (Google)
+- **Research Model**: `gemini-2.0-flash` (Google)
+- **Fallback Model**: `gemini-2.0-flash` (Google)
+
+### **Comandos de Configuração**
+```bash
+# Configurar modelo principal
+task-master models --set-main=gemini-2.0-flash
+
+# Configurar modelo de pesquisa
+task-master models --set-research=gemini-2.0-flash
+
+# Configurar modelo de fallback
+task-master models --set-fallback=gemini-2.0-flash
+```
+
+## **Validação da Configuração**
+
+### **Verificar Status dos Models**
+```bash
+task-master models
+```
+
+**Status Esperado:**
+- ✅ `"cli": true` para todos os models
+- ✅ `"mcp": true` para todos os models
+- ✅ `"provider": "google"` para todos os models
+
+### **Teste de Funcionamento**
+```bash
+# Expandir uma tarefa para testar
+task-master expand --id=1 --force
+```
+
+**Resultado Esperado:**
+- ✅ Comando executa sem erros
+- ✅ Subtarefas são geradas
+- ✅ `"providerName": "google"` no resultado
+
+## **Restrições Obrigatórias**
+
+### **❌ NÃO Configurar**
+- **Anthropic Claude**: Não usar como fallback
+- **OpenAI GPT**: Não configurar
+- **Perplexity**: Não usar para pesquisa
+- **Outros provedores**: Não adicionar
+
+### **✅ SEMPRE Usar**
+- **Google Gemini**: Único provedor permitido
+- **Modelo**: `gemini-2.0-flash` (versão estável)
+- **Chave**: Configurada em ambos os ambientes (CLI e MCP)
+
+## **Manutenção**
+
+### **Atualizações de Configuração**
+- Sempre verificar se apenas Google Gemini está configurado
+- Remover qualquer configuração de outros provedores
+- Validar funcionamento após mudanças
+
+### **Troubleshooting**
+- **Erro "API key not found"**: Verificar `.cursor/mcp.json` e `.env`
+- **Erro "model not found"**: Usar `gemini-2.0-flash` (versão estável)
+- **MCP não funciona**: Reiniciar Cursor após mudanças no `mcp.json`
+
+## **Exemplos de Uso**
+
+### **Comandos Funcionais**
+```bash
+# ✅ DO: Comandos que funcionam com Gemini
+task-master expand --id=1 --force
+task-master parse-prd .taskmaster/docs/prd.txt
+task-master analyze-complexity --research
+task-master add-task --prompt="Nova tarefa"
+```
+
+### **Comandos de Verificação**
+```bash
+# Verificar configuração atual
+task-master models
+
+# Listar tarefas
+task-master list
+
+# Próxima tarefa
+task-master next
+```
+
+## **Custos e Monitoramento**
+
+### **Informações de Custo**
+- **Input**: $0.15 por 1M tokens
+- **Output**: $0.60 por 1M tokens
+- **Modelo**: `gemini-2.0-flash` (custo otimizado)
+
+### **Telemetria Esperada**
+```json
+{
+  "modelUsed": "gemini-2.0-flash",
+  "providerName": "google",
+  "totalCost": 0.000716,
+  "currency": "USD"
+}
